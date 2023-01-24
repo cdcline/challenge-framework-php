@@ -3,7 +3,16 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-<h1>Home</h1>
-<p>Welcome to the home page!</p>
-{% if (isset($hData)) : %}{{{ $hData }}}{% endif %}
+<div class="row align-items-center">
+   <h1 class="col text-center">Home</h1>
+</div>
+<div class="row">
+   <p class="col">Welcome to the home page!</p>
+</div>
+{% if (isset($hData)) : %}
+<div class="d-flex border border-secondary rounded text-middle">
+   <p class="col my-auto px-1 text-right border-right">Found Data:</p>
+   <p class="col my-auto px-1 text-left">{{{ $hData }}}</p>
+</div>
+{% endif %}
 {% endblock %}
