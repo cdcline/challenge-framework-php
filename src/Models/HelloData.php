@@ -1,12 +1,18 @@
 <?php
 
 namespace Models;
+use Utils\DBUtils;
 
 class HelloData
 {
    public static function fetchHello(): self
    {
-      return new self('Hello World');
+      $q = <<<EOT
+      SELECT `hello_text` FROM `hello`
+      ORDER BY rand()
+EOT;
+      $txt = DBUtils::fetchValue($q);
+      return new self($txt);
    }
 
    private function __construct(private string $helloData)
