@@ -2,4 +2,10 @@
 
 require 'vendor/autoload.php';
 
-Template::view('index');
+use Utils\Template;
+use Models\HelloData;
+
+Template::view(
+    'index',
+    ['hData' => HelloData::fetchHello()->getData()]
+);

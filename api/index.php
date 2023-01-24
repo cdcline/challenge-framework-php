@@ -1,8 +1,6 @@
 <?php
 
-$str = "Hello World";
-$data = ['value' => $str];
-$json = json_encode($data);
+require '../vendor/autoload.php';
+use Models\HelloData;
 
-echo "{$json}\n";
-
+echo HelloData::fetchHello()->toJson();

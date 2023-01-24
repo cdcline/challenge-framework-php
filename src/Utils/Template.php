@@ -1,4 +1,7 @@
 <?php
+
+namespace Utils;
+
 class Template {
 
 	static $blocks = array();

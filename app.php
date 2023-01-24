@@ -1,3 +1,6 @@
 <?php
 
-echo "Hello World\n";
+require 'vendor/autoload.php';
+use Models\HelloData;
+
+echo HelloData::fetchHello()->getData();
