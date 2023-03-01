@@ -2,5 +2,12 @@
 
 require '../vendor/autoload.php';
 use Models\HelloData;
+use Utils\ServerUtils;
 
-echo HelloData::fetchHello()->toJson();
+switch(ServerUtils::getApiEndpointFromUrl()) {
+   case 'test':
+      echo '{"test"}';
+      return;
+   default;
+      echo HelloData::fetchHello()->toJson();
+}
